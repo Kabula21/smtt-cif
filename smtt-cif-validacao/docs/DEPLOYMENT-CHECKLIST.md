@@ -1,0 +1,21 @@
+# Checklist de implantação — Validação 0.4.0
+
+- [ ] WordPress público separado da intranet.
+- [ ] Banco `smtt_cif_public` separado do banco oficial `smtt_cif`.
+- [ ] PHP 8.1+ com mysqli e sodium.
+- [ ] Durante homologação local, modo do Validação em **LOCAL / HOMOLOGAÇÃO** e Gestão em `homologation`.
+- [ ] No portal definitivo, HTTPS ativo antes de selecionar **PRODUÇÃO**.
+- [ ] Em produção, Validação em **PRODUÇÃO** e Gestão em `production`.
+- [ ] Chave pública Ed25519 do Gestão instalada no Validação e pertencente ao mesmo ambiente (`hml` ou `prod`).
+- [ ] Chave privada presente somente na intranet.
+- [ ] Heartbeat retorna `result: OK`.
+- [ ] Evento de projeção retorna `APPLIED`, `DUPLICATE` ou `STALE_IGNORED`.
+- [ ] Reconciliação retorna estados compatíveis.
+- [ ] `/validar/{TOKEN}` abre sem página WordPress editável.
+- [ ] QR/token válido abre diretamente a situação da emissão, sem formulário de código.
+- [ ] Token inválido retorna resposta pública genérica, sem pesquisa alternativa.
+- [ ] Rate limiting de tentativas inválidas verificado sem limitar consultas válidas ao mesmo QR.
+- [ ] Headers `noindex`, `no-store`, `Referrer-Policy` e CSP verificados.
+- [ ] Access logs do servidor/reverse proxy revisados para evitar retenção desnecessária da URL completa do QR.
+- [ ] Backup do banco público configurado.
+- [ ] Monitoramento dos últimos erros técnicos e heartbeat configurado operacionalmente.
