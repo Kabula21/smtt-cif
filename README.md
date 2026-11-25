@@ -1,7 +1,5 @@
 # SMTT CIF — Sistema de Carteira de Identificação Funcional
 
-# SMTT CIF — Sistema de Carteira de Identificação Funcional
-
 ![Status](https://img.shields.io/badge/Status-Em%20Produção-brightgreen)
 ![Gestão](https://img.shields.io/badge/Gestão-1.17.16-blue)
 ![Validação](https://img.shields.io/badge/Validação-0.7.0-blue)
